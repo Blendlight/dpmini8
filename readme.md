@@ -31,3 +31,13 @@ foreach($modules as $module)
 }
 ```
 
+
+
+
+### LINKS
+
+
+- __Injection Types__ https://symfony.com/doc/current/service_container/injection_types.html
+- __DI__ https://www.toptal.com/symfony/true-dependency-injection-symfony-components
+
+

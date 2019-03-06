@@ -152,6 +152,8 @@ class Container implements IntrospectableContainerInterface, ResettableContainer
 
     $definition = isset($this->serviceDefinitions[$id]) ? $this->serviceDefinitions[$id] : NULL;
 
+
+
     if (!$definition && $invalid_behavior === ContainerInterface::EXCEPTION_ON_INVALID_REFERENCE) {
       if (!$id) {
         throw new ServiceNotFoundException($id);

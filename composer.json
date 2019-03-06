@@ -12,7 +12,9 @@
         "symfony/http-foundation": "^3.4",
         "symfony/routing": "^3.4",
         "symfony/http-kernel": "^3.4",
-        "symfony/dependency-injection": "^3.4"
+        "symfony/dependency-injection": "^3.4",
+        "symfony/yaml": "^3.4",
+        "symfony/class-loader": "^3.4"
     },
     "autoload": {
         "psr-4": {

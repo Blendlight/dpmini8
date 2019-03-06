@@ -129,6 +129,41 @@ class DrupalKernel implements DrupalKernelInterface, TerminableInterface
     }
 
     /**
+     * Converts an exception into a response.
+     *
+     * @param \Exception $e
+     *   An exception
+     * @param Request $request
+     *   A Request instance
+     * @param int $type
+     *   The type of the request (one of HttpKernelInterface::MASTER_REQUEST or
+     *   HttpKernelInterface::SUB_REQUEST)
+     *
+     * @return Response
+     *   A Response instance
+     *
+     * @throws \Exception
+     *   If the passed in exception cannot be turned into a response.
+     */
+    protected function handleException(\Exception $e, $request, $type) {
+        //{IGNORE.NotUsing}
+
+        if(FALSE){
+            if ($this->shouldRedirectToInstaller($e, $this->container ? $this->container->get('database') : NULL)) {
+                return new RedirectResponse($request->getBasePath() . '/core/install.php', 302, ['Cache-Control' => 'no-cache']);
+            }
+        }
+
+        if ($e instanceof HttpExceptionInterface) {
+            $response = new Response($e->getMessage(), $e->getStatusCode());
+            $response->headers->add($e->getHeaders());
+            return $response;
+        }
+
+        throw $e;
+    }
+
+    /**
      * Determine the application root directory based on assumptions.
      *
      * @return string
