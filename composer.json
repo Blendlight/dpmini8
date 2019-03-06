@@ -22,7 +22,10 @@
         },
         "classmap": [
             "./core/lib/Drupal.php",
-            "./Moin.php"
+            "./core/lib/Drupal/Core/Database/Database.php",
+            "./core/lib/Drupal/Core/Site/Settings.php",
+            "./Moin.php",
+            "./core/deprecated/IntrospectableContainerInterface.php"
         ]
     }
 }
